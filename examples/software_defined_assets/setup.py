@@ -1,15 +1,15 @@
 from setuptools import setup  # type: ignore
 
 setup(
-    name="simple_lakehouse",
+    name="software_defined_assets",
     version="dev",
     author_email="hello@elementl.com",
-    packages=["simple_lakehouse"],  # same as name
+    packages=["software_defined_assets"],  # same as name
     install_requires=["dagster"],  # external packages as dependencies
     author="Elementl",
     license="Apache-2.0",
-    description="Dagster example for using the Lakehouse API.",
-    url="https://github.com/dagster-io/dagster/tree/master/examples/simple_lakehouse",
+    description="Dagster example of software-defined assets.",
+    url="https://github.com/dagster-io/dagster/tree/master/examples/software_defined_assets",
     classifiers=[
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
