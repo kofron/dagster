@@ -49,7 +49,6 @@ const initialState: State = {
 
 export const AssetSearch = () => {
   const history = useHistory();
-  // const [open, setOpen] = React.useState(false);
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const {open, queryString, results, highlight} = state;
   const {loading, performSearch} = useAssetSearch();

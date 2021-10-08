@@ -47,15 +47,11 @@ export const AssetKeysTable: React.FC<{
   });
 
   return (
-    <div style={{flexGrow: 1}}>
+    <div>
       <Loading allowStaleData queryResult={queryResult}>
         {({assetsOrError}) => {
           if (assetsOrError.__typename === 'PythonError') {
-            return (
-              <>
-                <PythonErrorInfo error={assetsOrError} />
-              </>
-            );
+            return <PythonErrorInfo error={assetsOrError} />;
           }
 
           const assets = assetsOrError.nodes;
@@ -63,10 +59,10 @@ export const AssetKeysTable: React.FC<{
           if (!assets.length) {
             return (
               <NonIdealState
-                icon="layers"
+                icon="asset"
                 title="Assets"
                 description={
-                  <p>
+                  <div>
                     {prefixPath.length ? (
                       <span>
                         There are no matching materialized assets with the specified asset key.
@@ -77,11 +73,14 @@ export const AssetKeysTable: React.FC<{
                     Any asset keys that have been specified with an{' '}
                     <code>AssetMaterialization</code> during a pipeline run will appear here. See
                     the{' '}
-                    <a href="https://docs.dagster.io/_apidocs/solids#dagster.AssetMaterialization">
+                    <a
+                      href="https://docs.dagster.io/_apidocs/solids#dagster.AssetMaterialization"
+                      target="_blank"
+                    >
                       AssetMaterialization documentation
                     </a>{' '}
                     for more information.
-                  </p>
+                  </div>
                 }
               />
             );
