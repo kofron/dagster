@@ -237,7 +237,10 @@ class TestEventLogStorage:
     @pytest.fixture(name="storage", params=[])
     def event_log_storage(self, request):
         with request.param() as s:
-            yield s
+            try:
+                yield s
+            finally:
+                s.dispose()
 
     def test_init_log_storage(self, storage):
         if isinstance(storage, InMemoryEventLogStorage):
