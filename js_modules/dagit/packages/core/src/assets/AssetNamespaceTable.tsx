@@ -4,6 +4,7 @@ import * as React from 'react';
 import {PythonErrorInfo, PYTHON_ERROR_FRAGMENT} from '../app/PythonErrorInfo';
 import {QueryCountdown} from '../app/QueryCountdown';
 import {useQueryPersistedState} from '../hooks/useQueryPersistedState';
+import {Box} from '../ui/Box';
 import {CursorPaginationControls, CursorPaginationProps} from '../ui/CursorControls';
 import {Loading} from '../ui/Loading';
 import {NonIdealState} from '../ui/NonIdealState';
@@ -126,9 +127,9 @@ export const AssetNamespaceTable: React.FC<{prefixPath: string[]; switcher: Reac
                 requery={(_) => [{query: ASSET_NAMESPACE_TABLE_QUERY}]}
               />
               {hasNextCursor || cursorIndex ? (
-                <div style={{marginTop: '20px'}}>
+                <Box margin={{top: 20}}>
                   <CursorPaginationControls {...paginationProps} />
-                </div>
+                </Box>
               ) : null}
             </>
           );
