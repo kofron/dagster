@@ -76,6 +76,7 @@ export const AssetKeysTable: React.FC<{
                     <a
                       href="https://docs.dagster.io/_apidocs/solids#dagster.AssetMaterialization"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       AssetMaterialization documentation
                     </a>{' '}
